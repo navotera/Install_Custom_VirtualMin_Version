@@ -1490,4 +1490,19 @@ else
   printf "${errorlist}"
 fi
 
+# Edit by Navotera
+# Allow to access from port 10000 for webmin
+firewall-cmd --add-port=10000/tcp --permanent
+virtualmin set-global-feature --disable-feature dns
+virtualmin set-global-feature --disable-feature mail
+
+##dunno but the config-system is not getting installed using this script 
+#need to do manual copy
+curl -o /tmp/webmin.deb -L 
+sudo ln -s /usr/share/webmin/virtual-server/config-system.pl /usr/bin/virtualmin-config-system
+
+
+## End edit by Navotera
+
+
 exit 0
