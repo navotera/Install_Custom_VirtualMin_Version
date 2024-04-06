@@ -28,9 +28,10 @@ type `passwd`, the password will be used for login to the webmin site
 
 
 ## Version : 
-1. webmin_2.105
-2. usermin_2.005
-3. virtual-server-7.10.0
+1. Webmin_2.105
+2. Usermin_2.005
+3. Virtual-server-7.10.0 (Virtualmin Core)
+4. Virtual min theme 9.5
 
 ## known Error 
 On installing the "CA Certificates" 
@@ -38,7 +39,6 @@ On installing the "CA Certificates"
  ✘
 [ERROR] Something went wrong. Exiting.
 [ERROR] The last few log entries were:
-
 
 *Solution* 
 `dpkg --configure -a`
