@@ -1,6 +1,6 @@
 Install 
 
 ```
-curl https://raw.githubusercontent.com/navotera/Install_Custom_VirtualMin_Version/master/Install.sh | bash | tee /var/log/webmin_install.log
+wget https://raw.githubusercontent.com/navotera/Install_Custom_VirtualMin_Version/master/Install.sh | bash | tee /var/log/webmin_install.log
 ```
 
