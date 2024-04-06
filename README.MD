@@ -14,6 +14,13 @@ Ubuntu 20.04
 wget https://raw.githubusercontent.com/navotera/Install_Custom_VirtualMin_Version/master/install.sh && sh install.sh --minimal --force --hostname opensynergic.com --bundle LEMP | tee /var/log/webmin_install.log
 ```
 
+
+## After Installation 
+If you want to login the the Webmin https, set the passwd first 
+type `passwd`, the password will be used for login to the webmin site 
+*https://IP_ADDRESS:10000*
+
+
 ## Other installed package 
 1. Nginx 
 2. MariaDB
