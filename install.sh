@@ -1200,22 +1200,22 @@ install_with_apt() {
 
   #download from source and run
   #Webmin 
-  wget -P /tmp/ -O /tmp/webmin.deb https://github.com/navotera/Install_Custom_VirtualMin_Version/blob/master/package/webmin_2.105_all.deb
+  curl -o /tmp/webmin.deb -L https://github.com/navotera/Install_Custom_VirtualMin_Version/raw/master/package/webmin_2.105_all.deb
   apt-get install libnet-ssleay-perl libauthen-pam-perl libio-pty-perl unzip -y
   dpkg -i /tmp/webmin.deb  
 
 
   #usermin 
-  wget -P  /tmp/ -O /tmp/usermin.deb https://github.com/navotera/Install_Custom_VirtualMin_Version/blob/master/package/usermin_2.005_all.deb
+  curl -o /tmp/usermin.deb -L  https://github.com/navotera/Install_Custom_VirtualMin_Version/raw/master/package/usermin_2.005_all.deb
   dpkg -i /tmp/usermin.deb
 
 
   #Virtualmin install as package of webmin
-  wget -P /tmp/ -O /tmp/virtualmin.gpl.wbm.gz https://github.com/navotera/Install_Custom_VirtualMin_Version/blob/master/package/virtual-server-7.10.0.gpl.wbm.gz
+  curl -o /tmp/virtualmin.gpl.wbm.gz -L  https://github.com/navotera/Install_Custom_VirtualMin_Version/raw/master/package/virtual-server-7.10.0.gpl.wbm.gz
   sudo /usr/share/webmin/install-module.pl /tmp/virtualmin.gpl.wbm.gz
 
   #Virtualmin theme 
-  wget -P /tmp/ -O /tmp/virtualmin-server-theme.gpl.wbm.gz https://github.com/navotera/Install_Custom_VirtualMin_Version/blob/master/package/virtual-server-theme-9.5.wbt.gz
+  curl -o /tmp/virtualmin-server-theme.gpl.wbm.gz -L https://github.com/navotera/Install_Custom_VirtualMin_Version/raw/master/package/virtual-server-theme-9.5.wbt.gz
   sudo /usr/share/webmin/install-module.pl /tmp/virtualmin-server-theme.gpl.wbm.gz
 
 
