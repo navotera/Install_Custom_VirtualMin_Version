@@ -1214,6 +1214,10 @@ install_with_apt() {
   wget -P /tmp/ -O /tmp/virtualmin.gpl.wbm.gz https://download.webmin.com/download/virtualmin/virtual-server-7.10.0.gpl.wbm.gz
   sudo /usr/share/webmin/install-module.pl /tmp/virtualmin.gpl.wbm.gz
 
+  #Virtualmin theme 
+  
+
+
   # Make sure the time is set properly
   /usr/sbin/ntpdate-debian >> "$RUN_LOG" 2>&1
 
