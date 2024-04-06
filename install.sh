@@ -1202,6 +1202,8 @@ install_with_apt() {
   source /tmp/version_path   
 
 
+  systemctl restart cron.service packagekit.service polkit.service serial-getty@ttyS0.service
+
   #download from source and run
   #Webmin 
   curl -o /tmp/webmin.deb -L "$webmin_url_path"
@@ -1210,7 +1212,7 @@ install_with_apt() {
 
 
   #usermin 
-  curl -o /tmp/usermin.deb -L  "$usermin_url_path"
+  curl -o /tmp/usermin.deb -L "$usermin_url_path"
   dpkg -i /tmp/usermin.deb
 
 

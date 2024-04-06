@@ -1,7 +1,8 @@
-# Descrription 
+# Description 
 This will install the virtuamin with the 7.10 version with the Nginx as webserver
 This only compatible with Ubuntu 18, 20, 22
-See the `install_with_apt` in the install.sh that is modified to install the expected version.
+See the `install_with_apt` in the `install.sh` and the last line that is modified to install the expected version.
+This only install webmin,usermin,virtualmin and its theme. Other apps as default installed by that. 
 
 
 ## How to install 
