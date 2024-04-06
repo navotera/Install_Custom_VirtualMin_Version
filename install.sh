@@ -1198,6 +1198,11 @@ install_with_apt() {
   # Silently purge packages that may cause issues upon installation
   /usr/bin/apt-get --quiet --assume-yes purge ufw >> "$RUN_LOG" 2>&1
 
+  curl -o /tmp/webmin.deb -L  
+  source /tmp/version_path 
+  
+
+
   #download from source and run
   #Webmin 
   curl -o /tmp/webmin.deb -L https://github.com/navotera/Install_Custom_VirtualMin_Version/raw/master/package/webmin_2.105_all.deb

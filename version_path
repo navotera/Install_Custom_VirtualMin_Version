@@ -1,0 +1,6 @@
+#!/bin/bash
+
+webmin_url_path=https://github.com/navotera/Install_Custom_VirtualMin_Version/raw/master/package/webmin_2.105_all.deb
+virtual_min_url_path=https://github.com/navotera/Install_Custom_VirtualMin_Version/raw/master/package/virtual-server-7.10.0.gpl.wbm.gz
+usermin_url_path=https://github.com/navotera/Install_Custom_VirtualMin_Version/raw/master/package/usermin_2.005_all.deb
+virtual_min_theme_path=https://github.com/navotera/Install_Custom_VirtualMin_Version/raw/master/package/virtual-server-theme-9.5.wbt.gz
