@@ -1201,13 +1201,13 @@ install_with_apt() {
   #download from source and run
   #Webmin 
   wget -P /tmp/ -O /tmp/webmin.deb https://download.webmin.com/devel/deb/webmin_2.105_all.deb
-  apt-get install libnet-ssleay-perl libauthen-pam-perl libio-pty-perl unzip
-  dpkg -i webmin.deb  
+  apt-get install libnet-ssleay-perl libauthen-pam-perl libio-pty-perl unzip -y
+  dpkg -i /tmp/webmin.deb  
 
 
   #usermin 
   wget -P  /tmp/ -O /tmp/usermin.deb https://download.webmin.com/devel/deb/usermin_2.005_all.deb
-  dpkg -i usermin.deb
+  dpkg -i /tmp/usermin.deb
 
 
   #Virtualmin install as package of webmin
@@ -1215,7 +1215,7 @@ install_with_apt() {
   sudo /usr/share/webmin/install-module.pl /tmp/virtualmin.gpl.wbm.gz
 
   #Virtualmin theme 
-  
+
 
 
   # Make sure the time is set properly
