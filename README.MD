@@ -1,5 +1,7 @@
 # Descrription 
 This will install the virtuamin with the 7.10 version. 
+This only compatible with Ubuntu 18, 20, 22
+See the `install_with_apt` in the install.sh that is modified to install the expected version.
 
 
 ## How to install 

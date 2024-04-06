@@ -1215,7 +1215,8 @@ install_with_apt() {
   sudo /usr/share/webmin/install-module.pl /tmp/virtualmin.gpl.wbm.gz
 
   #Virtualmin theme 
-
+  wget -P /tmp/ -O /tmp/virtualmin.gpl.wbm.gz https://download.webmin.com/download/virtualmin/virtual-server-7.10.0.gpl.wbm.gz
+  sudo /usr/share/webmin/install-module.pl /tmp/virtualmin.gpl.wbm.gz
 
 
   # Make sure the time is set properly
