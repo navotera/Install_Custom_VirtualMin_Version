@@ -15,6 +15,10 @@
 # A manual install might work for you though.
 # See here: https://www.virtualmin.com/documentation/installation/manual/
 
+#if error on CA Certificate 
+dpkg --configure -a
+
+
 # License and version
 SERIAL=GPL
 KEY=GPL
