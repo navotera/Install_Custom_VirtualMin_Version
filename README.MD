@@ -4,6 +4,9 @@ This only compatible with Ubuntu 18, 20, 22
 See the `install_with_apt` in the `install.sh` and the last line that is modified to install the expected version.
 This only install webmin,usermin,virtualmin and its theme. Other apps as default installed by that. 
 
+## Tested 
+Ubuntu 20.04
+
 
 ## How to install 
 

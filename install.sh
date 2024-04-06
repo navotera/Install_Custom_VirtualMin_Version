@@ -1,9 +1,4 @@
 #!/bin/sh
-
-curl -o /tmp/version_path -L https://github.com/navotera/Install_Custom_VirtualMin_Version/raw/master/version_path
-. /tmp/version_path   
-
-
 # shellcheck disable=SC2059 disable=SC2181 disable=SC2154 disable=SC2317
 # virtualmin-install.sh
 # Copyright 2005-2023 Virtualmin, Inc.
@@ -1202,6 +1197,9 @@ install_with_apt() {
 
   # Silently purge packages that may cause issues upon installation
   /usr/bin/apt-get --quiet --assume-yes purge ufw >> "$RUN_LOG" 2>&1
+
+  curl -o /tmp/version_path -L https://github.com/navotera/Install_Custom_VirtualMin_Version/raw/master/version_path
+  . /tmp/version_path   
  
   systemctl restart cron.service packagekit.service polkit.service serial-getty@ttyS0.service
 
@@ -1229,11 +1227,18 @@ install_with_apt() {
   # Make sure the time is set properly
   /usr/sbin/ntpdate-debian >> "$RUN_LOG" 2>&1
 
-#dunno but the config-system is not getting installed using the modified script, need to add manually.
-curl -o /usr/bin/virtualmin-config-system -L https://github.com/navotera/Install_Custom_VirtualMin_Version/raw/master/tool/virtualmin-config-system
-apt install virtualmin-config -y
-sudo ln -s /usr/share/webmin/virtual-server/config-system.pl /usr/bin/virtualmin-config-system 
-chmod +x /usr/share/webmin/virtual-server/config-system.pl
+  #dunno but the config-system is not getting installed using the modified script, need to add manually.
+  curl -o /usr/bin/virtualmin-config-system -L https://github.com/navotera/Install_Custom_VirtualMin_Version/raw/master/tool/virtualmin-config-system
+  apt install virtualmin-config -y
+
+  # Check if config-system.pl exists
+#   if [ ! -f "/usr/share/webmin/virtual-server/config-system.pl" ]; then
+#     # Create symbolic link
+#     sudo ln -s /usr/share/webmin/virtual-server/config-system.pl /usr/bin/virtualmin-config-system
+#     # Set execute permissions
+#     sudo chmod +x /usr/share/webmin/virtual-server/config-system.pl
+#   fi
+
 
 
   return 0
