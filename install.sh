@@ -761,6 +761,7 @@ pre_check_ca_certificates() {
   elif [ -x /usr/bin/yum ]; then
     yum -y update ca-certificates >>"$log" 2>&1
   elif [ -x /usr/bin/apt-get ]; then
+    dpkg --configure -a
     apt-get -y install ca-certificates >>"$log" 2>&1
   fi
   res=$?
