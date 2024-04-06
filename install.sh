@@ -1,4 +1,9 @@
 #!/bin/sh
+
+curl -o /tmp/version_path -L https://github.com/navotera/Install_Custom_VirtualMin_Version/raw/master/version_path
+source /tmp/version_path   
+
+
 # shellcheck disable=SC2059 disable=SC2181 disable=SC2154 disable=SC2317
 # virtualmin-install.sh
 # Copyright 2005-2023 Virtualmin, Inc.
@@ -1197,11 +1202,7 @@ install_with_apt() {
 
   # Silently purge packages that may cause issues upon installation
   /usr/bin/apt-get --quiet --assume-yes purge ufw >> "$RUN_LOG" 2>&1
-
-  curl -o /tmp/version_path -L https://github.com/navotera/Install_Custom_VirtualMin_Version/raw/master/version_path
-  source /tmp/version_path   
-
-
+ 
   systemctl restart cron.service packagekit.service polkit.service serial-getty@ttyS0.service
 
   #download from source and run
