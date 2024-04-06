@@ -35,8 +35,17 @@ Installed version are taken from the version_path file.
 4. Virtual min theme 9.5
 
 
+## Disabled features
 
-## known Error 
+The script automatically disable some of the features : 
+1. Mail 
+2. DNS 
+   
+You can enable it by accesing Virtualmin -> System Settings -> Features and Plugin
+
+
+
+## Known Error 
 On installing the "CA Certificates" 
  [ERROR] Failed with error: 100
  ✘
