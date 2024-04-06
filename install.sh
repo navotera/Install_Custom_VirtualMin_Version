@@ -1198,29 +1198,28 @@ install_with_apt() {
   # Silently purge packages that may cause issues upon installation
   /usr/bin/apt-get --quiet --assume-yes purge ufw >> "$RUN_LOG" 2>&1
 
-  curl -o /tmp/webmin.deb -L  
-  source /tmp/version_path 
-  
+  curl -o /tmp/version_path -L https://github.com/navotera/Install_Custom_VirtualMin_Version/raw/master/version_path
+  source /tmp/version_path   
 
 
   #download from source and run
   #Webmin 
-  curl -o /tmp/webmin.deb -L https://github.com/navotera/Install_Custom_VirtualMin_Version/raw/master/package/webmin_2.105_all.deb
+  curl -o /tmp/webmin.deb -L "$webmin_url_path"
   apt-get install libnet-ssleay-perl libauthen-pam-perl libio-pty-perl unzip -y
   dpkg -i /tmp/webmin.deb  
 
 
   #usermin 
-  curl -o /tmp/usermin.deb -L  https://github.com/navotera/Install_Custom_VirtualMin_Version/raw/master/package/usermin_2.005_all.deb
+  curl -o /tmp/usermin.deb -L  "$usermin_url_path"
   dpkg -i /tmp/usermin.deb
 
 
   #Virtualmin install as package of webmin
-  curl -o /tmp/virtualmin.gpl.wbm.gz -L  https://github.com/navotera/Install_Custom_VirtualMin_Version/raw/master/package/virtual-server-7.10.0.gpl.wbm.gz
+  curl -o /tmp/virtualmin.gpl.wbm.gz -L  "$virtual_min_url_path"
   sudo /usr/share/webmin/install-module.pl /tmp/virtualmin.gpl.wbm.gz
 
   #Virtualmin theme 
-  curl -o /tmp/virtualmin-server-theme.gpl.wbm.gz -L https://github.com/navotera/Install_Custom_VirtualMin_Version/raw/master/package/virtual-server-theme-9.5.wbt.gz
+  curl -o /tmp/virtualmin-server-theme.gpl.wbm.gz -L "$virtual_min_theme_path"
   sudo /usr/share/webmin/install-module.pl /tmp/virtualmin-server-theme.gpl.wbm.gz
 
 
