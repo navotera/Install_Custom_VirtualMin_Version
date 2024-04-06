@@ -1188,6 +1188,7 @@ if [ -n "$setup_only" ]; then
 fi
 
 # Install Functions
+#### START edited by Navotera
 install_with_apt() {
   # Install system package upgrades, if any
   if [ -z "$noupdates" ]; then
@@ -1197,37 +1198,29 @@ install_with_apt() {
   # Silently purge packages that may cause issues upon installation
   /usr/bin/apt-get --quiet --assume-yes purge ufw >> "$RUN_LOG" 2>&1
 
-  # Install Webmin/Usermin first, because it needs to be already done
-  # for the deps. Then install Virtualmin Core and then Stack packages
-  # Do it all in one go for the nicer UI
-  #   run_ok "$install webmin && $install usermin && $install $debvmpackages && $install $deps" "Installing Virtualmin $vm_version and all related packages"
-  #   if [ $? -ne 0 ]; then
-  #     log_warning "apt-get seems to have failed. Are you sure your OS and version is supported?"
-  #     log_warning "https://www.virtualmin.com/os-support"
-  #     fatal "Installation failed: $?"
-  #   fi
-
   #download from source and run
   #Webmin 
-  wget -P /tmp -O webmin.deb https://download.webmin.com/devel/deb/webmin_2.105_all.deb
+  wget -P /tmp/ -O /tmp/webmin.deb https://download.webmin.com/devel/deb/webmin_2.105_all.deb
+  apt-get install libnet-ssleay-perl libauthen-pam-perl libio-pty-perl unzip
   dpkg -i webmin.deb  
 
 
   #usermin 
-  wget -P  /tmp -O usermin.deb https://download.webmin.com/devel/deb/usermin_2.005_all.deb
+  wget -P  /tmp/ -O /tmp/usermin.deb https://download.webmin.com/devel/deb/usermin_2.005_all.deb
   dpkg -i usermin.deb
 
 
-  #Virtualmin
-  wget -P /tmp -O virtualmin.deb https://download.webmin.com/download/virtualmin/webmin-virtual-server_7.9.0.gpl_all.deb
-  dpkg -i virtualmin.deb
-
+  #Virtualmin install as package of webmin
+  wget -P /tmp/ -O /tmp/virtualmin.gpl.wbm.gz https://download.webmin.com/download/virtualmin/virtual-server-7.10.0.gpl.wbm.gz
+  sudo /usr/share/webmin/install-module.pl /tmp/virtualmin.gpl.wbm.gz
 
   # Make sure the time is set properly
   /usr/sbin/ntpdate-debian >> "$RUN_LOG" 2>&1
 
   return 0
 }
+
+##### END Edited by Navotera. 
 
 install_with_yum() {
   # Enable CodeReady and EPEL on RHEL 8+
