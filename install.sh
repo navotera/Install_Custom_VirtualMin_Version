@@ -1,7 +1,7 @@
 #!/bin/sh
 
 curl -o /tmp/version_path -L https://github.com/navotera/Install_Custom_VirtualMin_Version/raw/master/version_path
-source ~/tmp/version_path   
+. /tmp/version_path   
 
 
 # shellcheck disable=SC2059 disable=SC2181 disable=SC2154 disable=SC2317
