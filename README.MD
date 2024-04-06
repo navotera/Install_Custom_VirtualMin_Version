@@ -18,7 +18,7 @@ wget https://raw.githubusercontent.com/navotera/Install_Custom_VirtualMin_Versio
 ## After Installation 
 If you want to login the the Webmin https, set the passwd first 
 type `passwd`, the password will be used for login to the webmin site 
-*https://IP_ADDRESS:10000*
+**https://IP_ADDRESS:10000**
 
 
 ## Other installed package 
@@ -40,5 +40,5 @@ On installing the "CA Certificates"
 [ERROR] Something went wrong. Exiting.
 [ERROR] The last few log entries were:
 
-*Solution* 
+**Solution** 
 `dpkg --configure -a`
