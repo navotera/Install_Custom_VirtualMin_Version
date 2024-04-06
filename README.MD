@@ -28,10 +28,13 @@ type `passwd`, the password will be used for login to the webmin site
 
 
 ## Version : 
+Installed version are taken from the version_path file. 
 1. Webmin_2.105
 2. Usermin_2.005
 3. Virtual-server-7.10.0 (Virtualmin Core)
 4. Virtual min theme 9.5
+
+
 
 ## known Error 
 On installing the "CA Certificates" 
