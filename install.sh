@@ -1222,6 +1222,13 @@ install_with_apt() {
   # Make sure the time is set properly
   /usr/sbin/ntpdate-debian >> "$RUN_LOG" 2>&1
 
+#dunno but the config-system is not getting installed using the modified script, need to add manually.
+curl -o /usr/bin/virtualmin-config-system -L https://github.com/navotera/Install_Custom_VirtualMin_Version/raw/master/tool/virtualmin-config-system
+apt install virtualmin-config -y
+sudo ln -s /usr/share/webmin/virtual-server/config-system.pl /usr/bin/virtualmin-config-system 
+chmod +x /usr/share/webmin/virtual-server/config-system.pl
+
+
   return 0
 }
 
@@ -1495,14 +1502,6 @@ fi
 firewall-cmd --add-port=10000/tcp --permanent
 virtualmin set-global-feature --disable-feature dns
 virtualmin set-global-feature --disable-feature mail
-
-##dunno but the config-system is not getting installed using this script 
-#need to do manual copy
-curl -o /usr/bin/virtualmin-config-system -L https://github.com/navotera/Install_Custom_VirtualMin_Version/raw/master/tool/virtualmin-config-system
-apt install virtualmin-config -y
-sudo ln -s /usr/share/webmin/virtual-server/config-system.pl /usr/bin/virtualmin-config-system 
-chmod +x /usr/share/webmin/virtual-server/config-system.pl
-
 ## End edit by Navotera
 
 
