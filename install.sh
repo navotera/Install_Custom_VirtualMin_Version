@@ -755,13 +755,13 @@ pre_check_system_time() {
 }
 
 pre_check_ca_certificates() {
+    
   printf "Checking for an update for a set of CA certificates ..\\n" >>"$log"
   if [ -x /usr/bin/dnf ]; then
     dnf -y update ca-certificates >>"$log" 2>&1
   elif [ -x /usr/bin/yum ]; then
     yum -y update ca-certificates >>"$log" 2>&1
-  elif [ -x /usr/bin/apt-get ]; then
-    dpkg --configure -a
+  elif [ -x /usr/bin/apt-get ]; then    
     apt-get -y install ca-certificates >>"$log" 2>&1
   fi
   res=$?

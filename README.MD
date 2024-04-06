@@ -24,3 +24,14 @@ wget https://raw.githubusercontent.com/navotera/Install_Custom_VirtualMin_Versio
 1. webmin_2.105
 2. usermin_2.005
 3. virtual-server-7.10.0
+
+## known Error 
+On installing the "CA Certificates" 
+ [ERROR] Failed with error: 100
+ ✘
+[ERROR] Something went wrong. Exiting.
+[ERROR] The last few log entries were:
+
+
+*Solution* 
+`dpkg --configure -a`
